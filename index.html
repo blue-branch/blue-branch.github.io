@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="logo.svg" />
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Branch</title>
+  <style>
+    @media screen {
+      body {
+        background-color: #000000;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 20px;
+        max-width: 1400px;
+        margin: auto;
+        background-color: #00000089;
+        backdrop-filter: blur(10px);
+      }
+
+      .sticky-header {
+        position: sticky;
+        top: 0;
+      }
+
+      nav {
+        padding: 0;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+      }
+
+      nav ul li {
+        list-style: none;
+        padding: 0 10px;
+      }
+
+      hr {
+        margin: 0;
+        padding: 0;
+        border: 0.5px solid #323232;
+      }
+
+      .enq {
+        background-color: #fefefe;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 12px;
+        font-size: 12px;
+        color: #000000;
+        cursor: pointer;
+      }
+
+      .ordr {
+        background-color: #000000;
+        background-image: url(ordr-btn-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 0.7px solid #7d7d7d;
+        border-radius: 5px;
+        padding: 7px 12px;
+        font-size: 12px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .enq:hover {
+        background-color: #c0c0c0;
+        transition: 0.3s;
+      }
+
+      .ordr:hover {
+        background-color: #7d7d7d;
+        transition: 0.3s;
+      }
+
+      .mob-btn a {
+        display: none;
+      }
+
+      input[type="search"] {
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 15px;
+        color: #909090;
+        background-color: #252525;
+        cursor: pointer;
+        width: 300px;
+      }
+
+      input[type="search"]:focus {
+        outline: none;
+        transition: 0.3s;
+        background-color: #323232;
+      }
+
+      main {
+        max-width: 1180px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .gif-prt {
+        text-align: center;
+        margin: 80px auto 0;
+        padding-bottom: 100px;
+        background-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.616) 0,
+            rgba(0, 0, 0, 0.412) 100%),
+          url(https://i.pinimg.com/originals/9b/2b/2a/9b2b2a3a89e55d72d0bd6657cf7c6fd2.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .prim-service {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 100px;
+        background: linear-gradient(0deg,
+            rgb(22, 22, 22) 0%,
+            rgba(0, 0, 0, 1) 100%);
+      }
+
+      .big-card {
+        border: solid 0.3px #7d7d7d;
+        border-radius: 10px;
+        margin: 5px;
+        width: 31%;
+        min-width: 300px;
+      }
+
+      .big-card:hover {
+        border: solid 0.3px #d1d1d1;
+        transition: 0.3s;
+        background-color: #252525;
+        cursor: pointer;
+      }
+
+      .crd-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        aspect-ratio: 3/2;
+      }
+
+      .crd-title {
+        padding: 10px 20px 0;
+        font-weight: 600;
+      }
+
+      .crd-contnt {
+        padding: 10px 20px 20px;
+        color: #7d7d7d;
+      }
+
+      .card {
+        border: solid 0.3px #7d7d7d;
+        border-radius: 10px;
+        margin: 5px;
+        width: 31%;
+        min-width: 300px;
+        padding: 20px 0;
+      }
+
+      .card:hover {
+        border: solid 0.3px #d1d1d1;
+        transition: 0.3s;
+        background-color: #252525;
+        cursor: pointer;
+      }
+
+      h5 {
+        padding: 0 20px;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      sic {
+        padding: 10px 20px 0;
+        color: #7d7d7d;
+        display: flex;
+      }
+
+      #accordion {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .testi {
+        padding: 15px;
+      }
+
+      .testi p {
+        font-weight: 200;
+      }
+
+      .author {
+        margin-top: 35px;
+      }
+
+      footer {
+        padding: 50px 0;
+        background-color: #101010;
+      }
+
+      .foot-ele {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .foot-ele a {
+        margin: 3px 0;
+        color: rgb(196, 196, 196);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .foot-ele a:hover {
+        color: white;
+        transition: 0.3s;
+      }
+
+      .img-logo {
+        height: 30px;
+      }
+
+      .service-head {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: max-content;
+      }
+
+      .testie-container {
+        display: flex;
+        background-color: #101010;
+        border-radius: 10px;
+        border: solid 0.3px #4e4e4e;
+        margin-bottom: 100px;
+      }
+
+      .tech-stuff {
+        background-image: url(https://i.pinimg.com/originals/fd/e6/7c/fde67cdf73d8184868226baa0c803c36.gif);
+        aspect-ratio: 1;
+        max-width: 600px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: auto;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.567);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .overlay:target {
+        visibility: visible;
+        opacity: 1;
+      }
+      .wrapper {
+        margin: 70px auto;
+        padding: 30px 5px;
+        background: rgb(66, 68, 86);
+        border-radius: 30px;
+        width: 100%;
+        max-width: 450px;
+        color: white;
+        position: relative;
+        transition: all 5s ease-in-out;
+      }
+
+      .wrapper .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+
+      .wrapper .close:hover {
+        color: #f80202;
+      }
+    }
+
+    @media (max-width: 835px) {
+      .txt-logo {
+        display: none;
+      }
+
+      .img-logo {
+        height: 50px;
+      }
+
+      .testie-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 676px) {
+      .big-card {
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .service-head {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 612px) {
+      nav ul li:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 533px) {
+      nav ul li:nth-child(3) {
+        display: none;
+      }
+
+      nav ul li {
+        margin-right: -15px;
+      }
+
+      .mob-btn a {
+        display: block;
+      }
+
+      .form-footer{
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sticky-header">
+    <header>
+      <div style="display: flex; align-items: center">
+        <img class="img-logo" src="logo.svg" alt="" />
+        <p class="txt-logo" style="
+              font-family: 'Audiowide';
+              font-size: 28px;
+              margin: 0 3px;
+              background: linear-gradient(to bottom, #ffffff, #9c9c9c);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+            ">
+          BLUE BRANCH
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <input type="search" id="searchInput" placeholder="Search for services..." />
+          </li>
+          <li>
+            <a href="order.html#static"><button class="ordr">ORDER&#9658;</button></a>
+          </li>
+          <li>
+            <a href="#enq"><button class="enq">ENQUIRE</button></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+  </div>
+
+  
+  <div class="overlay" id="enq">
+    <div
+      style="border-radius: 30px;"
+      class="wrapper">
+      <h2 style="color: white;">Enquiry</h2><a class="close" href="#">&times;</a>
+      <div data-aidaform-widget="form-2019-12" data-url="https://blubranch.aidaform.com/service-enquirey"
+        data-width="100%" data-height="500px" data-do-resize></div>
+      <script>(function () { var r, d = document, gt = d.getElementById, cr = d.createElement, tg = d.getElementsByTagName, id = "aidaform-embed"; if (!gt.call(d, id)) { r = cr.call(d, "script"); r.id = id; r.src = "https://embed.aidaform.com/embed.js"; (d.head || tg.call(d, "head")[0]).appendChild(r); } })()</script>
+
+    </div>
+  </div>
+
+  <script>
+    // Function to perform the search
+    function performSearch() {
+      const searchInput = document.getElementById("searchInput");
+      const searchTerm = searchInput.value.toLowerCase();
+
+      // Get all existing cards and dynamically generated cards
+      const cards = document.querySelectorAll(".big-card");
+      const apiCards = document.querySelectorAll(".card-body");
+
+      // Merge all cards into one NodeList
+      const allCards = document.querySelectorAll(".big-card, .card-body");
+      let firstMatchingCard = null;
+
+      allCards.forEach((card) => {
+        const cardText = card.textContent.toLowerCase();
+
+        if (cardText.includes(searchTerm)) {
+          card.style.display = "block"; // Show matching card
+          if (!firstMatchingCard) {
+            firstMatchingCard = card;
+          }
+        } else {
+          card.style.display = "none"; // Hide non-matching card
+        }
+      });
+
+      // Scroll to the first matching card if found
+      if (firstMatchingCard) {
+        firstMatchingCard.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Attach the search function to the input's "keyup" event
+    document
+      .getElementById("searchInput")
+      .addEventListener("keyup", performSearch);
+  </script>
+
+  <div class="mob-btn" style="margin: 20px; display: flex; justify-content: center">
+    <a href="order.html#static"><button style="margin: 5px" class="ordr">ORDER&#9658;</button></a>
+    <a href="enq"><button style="margin: 5px" class="enq">ENQUIRE</button></a>
+  </div>
+
+  <main>
+    <div class="gif-prt">
+      <p style="
+            font-size: 21px;
+            font-weight: 200;
+            color: #b2b2b2;
+            padding: 32px;
+            margin: 0;
+          ">
+        Give your
+        <b style="color: white; font-weight: 400">busniess a boost</b> of
+        online presence today with our starter package at only
+        <b style="color: white; font-weight: 400">$17.99/- a month</b>
+      </p>
+      <div style="border: dashed 0.3px rgb(51, 51, 51)">
+        <h1 style="
+              border: dashed 0.3px rgb(51, 51, 51);
+              font-size: 57px;
+              padding: 24px;
+              background: linear-gradient(to bottom, #ffffff, #696969);
+              margin: 0;
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+            ">
+          Here at Blue Branch only thing that matter's is quality
+        </h1>
+        <p style="
+              border: dashed 0.3px rgb(51, 51, 51);
+              font-size: 21px;
+              font-weight: 200;
+              color: #b2b2b2;
+              padding: 40px 32px;
+              line-height: 40px;
+              margin: 0;
+            ">
+          Ah just kidding to be honest we're just smartest kids of town
+          pulling of a publicity stunt to get free
+          <b style="color: white; font-weight: 400">apple pies</b> from our
+          clients nd beat apple why do u think we're this cheap
+        </p>
+        <div style="
+              border: dashed 0.3px rgb(51, 51, 51);
+              width: max-content;
+              padding: 40px;
+              margin: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            ">
+          <div style="display: flex">
+            <a href="#enq"><button style="padding: 15px; margin: 5px" class="ordr">
+              GET STARTED
+            </button></a>
+            <a href="order.html#static"><button style="padding: 15px; margin: 5px" class="enq">
+              LEARN MORE
+            </button></a>
+          </div>
+          <p style="color: #7d7d7d">
+            Get ur own website today
+            <a href="order.html#static"><button class="enq">Learn how &rarr;</button></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="service-head">
+    <h1 style="
+          padding: 24px;
+          background: linear-gradient(to bottom, #ffffff, #5d5d5d);
+          margin: 0;
+          width: max-content;
+          padding: 10px;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        ">
+      What services?
+    </h1>
+    <p style="
+          text-align: center;
+          display: flex;
+          margin: 0;
+          color: #969696;
+          font-size: 20px;
+          font-weight: 300;
+        ">
+      we make websites to seduce you ;&#41;
+    </p>
+  </div>
+
+  <div class="prim-service">
+    <main>
+      <div style="
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            justify-content: center;
+          ">
+        <div class="big-card">
+          <img class="crd-img" src="Student website 2.png" alt="" />
+          <div class="crd-title">Student</div>
+          <div class="crd-contnt">
+            Stable websites for students at cheap prices which are presentable
+            and beautiful
+          </div>
+        </div>
+
+        <div class="big-card">
+          <img class="crd-img" src="https://i.pinimg.com/originals/a9/ed/0d/a9ed0d1dccac94b7b9281de446837571.gif"
+            alt="" />
+          <div class="crd-title">Dynamic</div>
+          <div class="crd-contnt">
+            Stable websites for students at cheap prices which are presentable
+            and beautiful
+          </div>
+        </div>
+
+        <div class="big-card">
+          <img class="crd-img" src="https://i.pinimg.com/originals/3f/77/55/3f7755019fc70726f57337ee714d76ae.gif"
+            alt="" />
+          <div class="crd-title">Static</div>
+          <div class="crd-contnt">
+            Stable websites for students at cheap prices which are presentable
+            and beautiful
+          </div>
+        </div>
+
+        <div id="accordion"></div>
+      </div>
+
+      <script>
+        const apiResult = [
+          {
+            title: "Static Student",
+            description:
+              "We offer static websites tailored for students at affordable prices. Our websites are designed to be both presentable and visually appealing.",
+          },
+          {
+            title: "Static Shop",
+            description:
+              "Our Static Shop service provides you with static websites suitable for online stores. We focus on creating user-friendly and attractive online shopping experiences.",
+          },
+          {
+            title: "Static Business",
+            description:
+              "Static Business websites are designed to meet the specific needs of businesses. We create professional and functional websites that enhance your online presence.",
+          },
+          {
+            title: "Dynamic Student",
+            description:
+              "Dynamic Student websites offer a dynamic and interactive online experience for students. We provide stable and engaging websites at budget-friendly rates.",
+          },
+          {
+            title: "Dynamic Shop",
+            description:
+              "Dynamic Shop websites are perfect for e-commerce businesses. We build dynamic and feature-rich online stores that drive sales and customer satisfaction.",
+          },
+          {
+            title: "Dynamic Business",
+            description:
+              "Our Dynamic Business websites are tailored to help businesses thrive online. We create dynamic, responsive, and impactful websites for your enterprise.",
+          },
+          {
+            title: "Ecommerce",
+            description:
+              "Our Ecommerce service is dedicated to setting up and optimizing your online store. We provide solutions for a seamless online shopping experience.",
+          },
+          {
+            title: "SEO",
+            description:
+              "SEO services are designed to improve your website's visibility in search engines. We optimize your website to rank higher and attract more organic traffic.",
+          },
+          {
+            title: "Logo Design",
+            description:
+              "Logo Design service focuses on creating unique and memorable logos for your brand. A well-designed logo sets the foundation for your brand identity.",
+          },
+          {
+            title: "Graphic Design",
+            description:
+              "Graphic Design services encompass a wide range of design solutions. We create visually appealing graphics for your marketing and branding needs.",
+          },
+          {
+            title: "SAAS",
+            description:
+              "SAAS (Software as a Service) solutions offer cloud-based software applications. We develop SAAS products that enhance efficiency and productivity.",
+          },
+        ];
+        const container = document.getElementById("accordion");
+
+        apiResult.forEach((result, idx) => {
+          // Create card element
+          const card = document.createElement("div");
+          card.classList = "card-body";
+
+          // Construct card content
+          const content = `
+                <div class="card">
+                <div class="card-header" id="heading-${idx}">
+                  <h5 class="mb-0">
+                  </h5>
+                </div>
+            
+                <div id="collapse-${idx}" class="collapse show" aria-labelledby="heading-${idx}" data-parent="#accordion">
+                  <div class="card-body">
+            
+                    <h5>${result.title}</h5>
+                    <sic>${result.description}</sic>
+                  </div>
+                </div>
+              </div>
+              `;
+
+          // Append newyly created card element to the container
+          container.innerHTML += content;
+        });
+      </script>
+    </main>
+  </div>
+  <hr />
+
+  <main>
+    <div class="tech-stuff">
+      <h2 style="
+            background: linear-gradient(to bottom, #ffffff, #5d5d5d);
+            width: max-content;
+            padding: 0;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            text-align: center;
+            width: 100%;
+          ">
+        Built on a foundation of fast, production-grade tooling
+      </h2>
+
+      <p style="
+            text-align: center;
+            color: #969696;
+            font-size: 20px;
+            font-weight: 300;
+          ">
+        ok very complicated for my vibe but...
+      </p>
+
+      <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 75%;
+          ">
+        <p style="
+              rotate: 90deg;
+              color: #969696;
+              font-size: 14px;
+              font-weight: 300;
+              margin: 60px -30px;
+            ">
+          It helps with...
+        </p>
+        <div style="
+              width: 45%;
+              border: 1px solid #00ff117e;
+              padding: 0 20px;
+              background-color: #00000070;
+              color: #00ff117e;
+            ">
+          <p>
+            <strong>for</strong> Responsiveness, Dynamics, perplex,
+            stability.....
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="testimonials">
+    <h1 style="
+          background: linear-gradient(to bottom, #ffffff, #5d5d5d);
+          width: max-content;
+          padding: 50px 0;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          text-align: center;
+          width: 100%;
+        ">
+      Testimonials
+    </h1>
+
+    <main>
+      <div class="testie-container">
+        <div class="testi">
+          <p>
+            "I'm thrilled with the website they created for me. Their work was
+            outstanding, and I'm considering sending them a small token of
+            appreciation."
+          </p>
+          <h4 class="author">
+            <img src="logo.svg" height="30px" alt="" /><br />~BLUEBRANCH
+          </h4>
+        </div>
+
+        <div class="testi" style="border: solid 0.3px #4e4e4e">
+          <p>
+            "The website they developed for me is top-notch. I'm extremely
+            satisfied with their services and the quality of work."
+          </p>
+          <h4 class="author"><br />~GREENGROW</h4>
+        </div>
+
+        <div class="testi">
+          <p>
+            "I couldn't be happier with the website they designed. It exceeded
+            my expectations, and I highly recommend their services."
+          </p>
+          <h4 class="author"><br />~ORANGEOFFICE</h4>
+        </div>
+      </div>
+    </main>
+    <hr />
+
+    <div></div>
+
+    <footer>
+      <main style="display: flex; justify-content: space-between; flex-wrap: wrap">
+        <div><img height="35px" src="logo.svg" alt="" /> BLUEBRANCH</div>
+
+        <div class="foot-ele">
+          <h3>Services</h3>
+          <a href="order.html#static">Static Student</a>
+          <a href="order.html#static">Static Shop</a>
+          <a href="order.html#static">Static Busniess</a>
+          <a href="order.html#dynamic-prod">Dynamic Student</a>
+          <a href="order.html#dynamic-prod">Dynamic Shop</a>
+          <a href="order.html#dynamic-prod">Dynamic Busniess</a>
+          <a href="order.html#ecomm">Ecommerce</a>
+          <a href="order.html#seo">SEO</a>
+          <a href="order.html#logo-design">Logo Design</a>
+          <a href="order.html#graphic-design">Graphic Design</a>
+          <a href="order.html#saas">SAAS</a>
+        </div>
+
+        <div class="foot-ele">
+          <h3>Legal</h3>
+          <a href="">privacy policies</a>
+          <a href="">cookie preferences</a>
+        </div>
+
+        <div class="foot-ele">
+          <h3>Social</h3>
+          <a href="">Instagram</a>
+          <a href="">Tic-Tok</a>
+          <a href="">Github</a>
+          <a href="">Linkedin</a>
+        </div>
+
+        <div class="foot-ele">
+          <h3>Links</h3>
+          <a href="">Order</a>
+          <a href="">Enquire</a>
+          <a href="">Get Started</a>
+          <a href="">Learn more</a>
+          <a href="">Learn how</a>
+        </div>
+      </main>
+
+      <main>
+        <p>© 2023 BLUE BRANCH, Inc.</p>
+        <div>
+          <img style="fill: white; color: white; stroke: white" src="twitter.svg" alt="" />
+        </div>
+      </main>
+    </footer>
+  </div>
+</body>
+
+</html>
