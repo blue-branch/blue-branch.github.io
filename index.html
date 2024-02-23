@@ -175,15 +175,18 @@
       }
 
       .card {
-        border: solid 0.3px #7d7d7d;
-        border-radius: 10px;
-        margin: 5px;
         width: 31%;
-        min-width: 300px;
-        padding: 20px 0;
       }
 
-      .card:hover {
+      .card-body {
+        border-radius: 10px;
+        padding: 20px 0;
+        margin: 5px;
+        border: solid 0.3px #7d7d7d;
+        padding: 10px 20px 20px;
+      }
+
+      .card-body:hover{
         border: solid 0.3px #d1d1d1;
         transition: 0.3s;
         background-color: #252525;
@@ -297,6 +300,7 @@
         max-width: 450px;
         color: white;
         position: relative;
+        overflow: hidden;
         transition: all 5s ease-in-out;
       }
 
@@ -410,10 +414,9 @@
       style="border-radius: 30px;"
       class="wrapper">
       <h2 style="color: white;">Enquiry</h2><a class="close" href="#">&times;</a>
-      <div data-aidaform-widget="form-2019-12" data-url="https://blubranch.aidaform.com/service-enquirey"
+      <div style="margin-bottom: -90px;" data-aidaform-widget="form-2019-12" data-url="https://blubranch.aidaform.com/service-enquirey"
         data-width="100%" data-height="500px" data-do-resize></div>
       <script>(function () { var r, d = document, gt = d.getElementById, cr = d.createElement, tg = d.getElementsByTagName, id = "aidaform-embed"; if (!gt.call(d, id)) { r = cr.call(d, "script"); r.id = id; r.src = "https://embed.aidaform.com/embed.js"; (d.head || tg.call(d, "head")[0]).appendChild(r); } })()</script>
-
     </div>
   </div>
 
